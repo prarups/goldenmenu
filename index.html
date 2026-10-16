@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Wings — Crispy Charm in Every Bite | Official Menu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        brand: {
+                            orange: '#f97316',
+                            red: '#ef4444',
+                            dark: '#0c0a09',
+                            card: '#18181b',
+                            border: 'rgba(255, 255, 255, 0.08)'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            background-color: #0c0a09; 
+            color: #ffffff; 
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .bg-fixed-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            z-index: -2;
+        }
+        
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fde047 0%, #f59e0b 50%, #ea580c 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 5px rgba(0,0,0,0.9));
+        }
+
+        .category-nav {
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            background: rgba(10, 8, 7, 0.6); 
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1.5px solid rgba(245, 158, 11, 0.4);
+            padding: 8px 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+
+        .nav-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 6px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 4px;
+        }
+
+        @media (min-width: 768px) {
+            .nav-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+                padding: 4px 12px;
+            }
+        }
+
+        .cat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 2px;
+            border-radius: 12px;
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+            transition: all 0.2s ease;
+            text-align: center;
+            text-decoration: none;
+            position: relative;
+            text-shadow: 0 1px 3px #000000;
+        }
+
+        @media (min-width: 768px) {
+            .cat-item {
+                flex-direction: row;
+                gap: 8px;
+                padding: 10px 18px;
+                border-radius: 9999px;
+            }
+        }
+
+        .cat-item i {
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+        @media (min-width: 768px) {
+            .cat-item i {
+                margin-bottom: 0;
+                font-size: 14px;
+            }
+        }
+
+        .cat-item span {
+            font-size: 8.5px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.15;
+            color: #ffffff;
+        }
+
+        @media (min-width: 768px) {
+            .cat-item span {
+                font-size: 11px;
+                letter-spacing: 0.05em;
+            }
+        }
+
+        .cat-item:hover, .cat-item:active {
+            background: rgba(245, 158, 11, 0.4);
+            border-color: #f59e0b;
+            color: #ffffff;
+            transform: scale(0.97);
+        }
+
+        /* COMBO BUTTON SPECIAL HIGHLIGHT (ESPECIALLY ON MOBILE) */
+        .combo-highlight {
+            background: linear-gradient(135deg, #ef4444 0%, #ea580c 50%, #f59e0b 100%) !important;
+            border: 2px solid #fef08a !important;
+            color: #ffffff !important;
+            box-shadow: 0 0 15px rgba(239, 68, 68, 0.8), 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+            animation: comboPulse 2s infinite ease-in-out;
+        }
+
+        .combo-highlight i {
+            color: #fef08a !important;
+            filter: drop-shadow(0 0 4px rgba(254, 240, 138, 0.8));
+        }
+
+        .combo-highlight span {
+            color: #ffffff !important;
+            font-weight: 900 !important;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        }
+
+        @keyframes comboPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+            }
+            50% {
+                transform: scale(1.06);
+                box-shadow: 0 0 20px rgba(245, 158, 11, 0.85), 0 0 25px rgba(239, 68, 68, 0.65);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+            }
+        }
+
+        .pulse-icon {
+            animation: pulseHint 1.5s infinite;
+        }
+
+        @keyframes pulseHint {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* 80% TRANSPARENT CARDS (NO SOLID BLACK) - FULL BACKGROUND IMAGE VISIBILITY */
+        .menu-card {
+            background: rgba(0, 0, 0, 0.20) !important;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border-radius: 22px;
+            border: 1.5px solid rgba(245, 158, 11, 0.45);
+            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.65), inset 0 0 15px rgba(255, 255, 255, 0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        }
+
+        .menu-card:hover {
+            border-color: rgba(245, 158, 11, 0.8);
+            box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(245, 158, 11, 0.3);
+            background: rgba(0, 0, 0, 0.28) !important;
+            transform: translateY(-3px);
+        }
+
+        .section-img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-bottom: 2px solid rgba(245, 158, 11, 0.35);
+        }
+
+        /* 80% TRANSPARENT ITEM ROWS WITH CRISP SHARP TEXT */
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            margin-bottom: 7px;
+            background: rgba(0, 0, 0, 0.28);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            transition: all 0.15s ease;
+        }
+
+        .item-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-row:hover {
+            background-color: rgba(245, 158, 11, 0.25);
+            border-color: rgba(245, 158, 11, 0.6);
+            transform: translateX(2px);
+        }
+
+        .item-row span, .item-row .text-white {
+            color: #ffffff !important;
+            font-weight: 700;
+            text-shadow: 0 1px 4px #000000, 0 0 2px #000000;
+        }
+
+        .item-row p, .item-row .text-gray-400 {
+            color: #e2e8f0 !important;
+            text-shadow: 0 1px 3px #000000;
+        }
+
+        .item-row .text-amber-400\/90, .item-row .text-amber-300 {
+            color: #fde047 !important;
+            text-shadow: 0 1px 3px #000000;
+        }
+
+        .item-row .text-gray-300 {
+            color: #f1f5f9 !important;
+            text-shadow: 0 1px 3px #000000;
+        }
+
+        /* SOLID CONTRAST GOLDEN PRICE BADGE */
+        .price-tag {
+            background: rgba(245, 158, 11, 0.3) !important;
+            border: 1.5px solid #fbbf24 !important;
+            padding: 3px 11px;
+            border-radius: 9999px;
+            color: #fbbf24 !important;
+            font-weight: 900;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            letter-spacing: 0.02em;
+            text-shadow: 0 1px 4px #000000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .dual-price-pill {
+            background: rgba(245, 158, 11, 0.3) !important;
+            border: 1.5px solid #fbbf24 !important;
+            padding: 3px 10px;
+            border-radius: 8px;
+            font-size: 11px;
+            font-weight: 900;
+            color: #fbbf24 !important;
+            text-shadow: 0 1px 3px #000000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .combo-card {
+            background: rgba(0, 0, 0, 0.28) !important;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1.5px dashed rgba(245, 158, 11, 0.5) !important;
+            border-radius: 16px;
+            padding: 18px;
+            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .combo-card:hover {
+            border-color: rgba(245, 158, 11, 0.9) !important;
+            transform: translateY(-3px);
+            background: rgba(0, 0, 0, 0.4) !important;
+        }
+
+        .combo-card h3 {
+            color: #ffffff !important;
+            text-shadow: 0 1px 4px #000000;
+        }
+
+        .combo-card p {
+            color: #f1f5f9 !important;
+            text-shadow: 0 1px 3px #000000;
+        }
+
+        #combos {
+            background: rgba(0, 0, 0, 0.25) !important;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 2px solid rgba(245, 158, 11, 0.5) !important;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7) !important;
+        }
+
+        #combos p {
+            color: #e2e8f0 !important;
+            text-shadow: 0 1px 3px #000000;
+        }
+
+        /* Custom scrollbar for category menu */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fixed Background Wallpaper (100% natural, no black overlay) -->
+    <div class="bg-fixed-layer"></div>
+
+    <!-- Header Section -->
+    <header class="relative pt-6 pb-3 px-4 text-center overflow-hidden border-b border-gold-500/25 bg-black/35 backdrop-blur-[2px]">
+
+        <div class="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <!-- Brand Logo -->
+            <div class="relative group mb-2">
+                <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+                <img src="logo.jpg" alt="Golden Wings Logo" class="relative w-24 h-24 md:w-32 md:h-32 rounded-full object-cover border-4 border-amber-400/90 shadow-2xl bg-black">
+            </div>
+
+            <!-- Restaurant Name -->
+            <h1 class="text-3xl md:text-5xl font-black uppercase tracking-wider gold-gradient-text drop-shadow-lg mb-1">
+                Golden Wings
+            </h1>
+
+            <!-- Tagline / Slogan -->
+            <div class="flex items-center justify-center gap-3">
+                <div class="h-[1px] w-10 bg-gradient-to-r from-transparent to-amber-500"></div>
+                <p class="text-amber-400 text-xs md:text-base uppercase tracking-[0.25em] font-extrabold italic" style="text-shadow: 0 1px 3px #000;">
+                    Crispy Charm in Every Bite
+                </p>
+                <div class="h-[1px] w-10 bg-gradient-to-l from-transparent to-amber-500"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tap Hint -->
+    <div class="bg-black/35 border-b border-amber-500/20 py-1.5 text-center backdrop-blur-sm">
+        <span class="text-[10px] md:text-xs text-amber-400 font-extrabold uppercase tracking-widest flex items-center justify-center gap-1.5" style="text-shadow: 0 1px 3px #000;">
+            <i class="fas fa-hand-pointer text-amber-400 pulse-icon"></i> Tap any category to jump
+        </span>
+    </div>
+
+    <!-- Category Navigation Bar (All buttons visible on mobile & desktop, with Combo highlighted) -->
+    <nav class="category-nav shadow-2xl">
+        <div class="nav-container">
+            <a href="#fried-chicken" class="cat-item text-amber-600">
+                <i class="fas fa-drumstick-bite text-amber-600"></i>
+                <span>Chicken</span>
+            </a>
+            <a href="#biryani" class="cat-item text-yellow-600">
+                <i class="fas fa-bowl-rice text-yellow-600"></i>
+                <span>Biryani</span>
+            </a>
+            <a href="#burgers-rolls" class="cat-item text-orange-600">
+                <i class="fas fa-burger text-orange-600"></i>
+                <span>Burgers</span>
+            </a>
+            <a href="#snacks" class="cat-item text-amber-700">
+                <i class="fas fa-cookie-bite text-amber-700"></i>
+                <span>Snacks</span>
+            </a>
+            <a href="#shawarmas" class="cat-item text-emerald-600">
+                <i class="fas fa-bread-slice text-emerald-600"></i>
+                <span>Shawarma</span>
+            </a>
+            <a href="#bowls-salads" class="cat-item text-teal-600">
+                <i class="fas fa-bowl-food text-teal-600"></i>
+                <span>Bowls</span>
+            </a>
+            <a href="#kebabs" class="cat-item text-rose-600">
+                <i class="fas fa-utensils text-rose-600"></i>
+                <span>Kebabs</span>
+            </a>
+            <a href="#ice-cream" class="cat-item text-pink-600">
+                <i class="fas fa-ice-cream text-pink-600"></i>
+                <span>Ice Cream</span>
+            </a>
+            <a href="#sundaes" class="cat-item text-purple-600">
+                <i class="fas fa-glass-water text-purple-600"></i>
+                <span>Sundaes</span>
+            </a>
+            <a href="#combos" class="cat-item combo-highlight">
+                <span class="absolute -top-1.5 -right-1 bg-yellow-300 text-black text-[7px] font-black px-1.5 py-0.2 rounded-full shadow tracking-tighter">HOT</span>
+                <i class="fas fa-fire"></i>
+                <span>Combos</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Menu Content -->
+    <main class="max-w-7xl mx-auto px-4 py-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 1. FRIED CHICKEN (CLASSIC & ROASTED) -->
+            <section id="fried-chicken" class="menu-card border-t-4 border-amber-500">
+                <div class="relative overflow-hidden">
+                    <img src="IMG-20251228-WA0014.jpg" class="section-img" alt="Crispy Fried Chicken" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-red-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Chef's Special
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-amber-500/20 pb-2">
+                            <h2 class="text-lg font-black text-amber-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-drumstick-bite text-amber-500"></i> Classic & Roasted
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Thai & Masala</span>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Classic Chicken 1 Pc Thai Crispy Crunchy Masala">
+                                <div>
+                                    <span class="font-semibold text-white">Classic Chicken (1 Pc)</span>
+                                    <p class="text-[11px] text-gray-400">Thai Crispy / Crunchy Masala</p>
+                                </div>
+                                <span class="price-tag">₹80</span>
+                            </div>
+                            <div class="item-row" data-name="Classic Chicken 5 Pcs Thai Crispy Crunchy Masala">
+                                <div>
+                                    <span class="font-semibold text-white">Classic Chicken (5 Pcs)</span>
+                                    <p class="text-[11px] text-gray-400">Thai Crispy / Crunchy Masala</p>
+                                </div>
+                                <span class="price-tag">₹390</span>
+                            </div>
+                            <div class="item-row" data-name="Classic Chicken 10 Pcs Thai Crispy Crunchy Masala Bucket">
+                                <div>
+                                    <span class="font-semibold text-white">Classic Chicken (10 Pcs)</span>
+                                    <p class="text-[11px] text-amber-400/90 font-medium">Mega Bucket Saver</p>
+                                </div>
+                                <span class="price-tag">₹770</span>
+                            </div>
+                            <div class="item-row" data-name="Spice Roaster Half">
+                                <div>
+                                    <span class="font-semibold text-white">Spice Roaster (Half)</span>
+                                    <p class="text-[11px] text-gray-400">Juicy Roasted Seasoned Chicken</p>
+                                </div>
+                                <span class="price-tag">₹229</span>
+                            </div>
+                            <div class="item-row" data-name="Add-on Mayonnaise Seasoning">
+                                <span class="text-gray-300 italic text-xs">Add-on Mayonnaise / Seasoning</span>
+                                <span class="price-tag text-xs">₹10</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. BIRYANI SPECIAL -->
+            <section id="biryani" class="menu-card border-t-4 border-yellow-500">
+                <div class="relative overflow-hidden">
+                    <img src="IMG-20251228-WA0011.jpg" class="section-img" alt="Biryani Special" onerror="this.src='https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Royal Feast
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-yellow-500/20 pb-2">
+                            <h2 class="text-lg font-black text-yellow-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-bowl-rice text-yellow-500"></i> Biryani Special
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Authentic Dum</span>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Mutton Biryani Regular">
+                                <div>
+                                    <span class="font-semibold text-white">Mutton Biryani (Regular)</span>
+                                    <p class="text-[11px] text-gray-400">Tender mutton slow-cooked with aromatic basmati</p>
+                                </div>
+                                <span class="price-tag">₹360</span>
+                            </div>
+                            <div class="item-row" data-name="Mutton Biryani Family Pack">
+                                <div>
+                                    <span class="font-semibold text-white">Mutton Family Pack</span>
+                                    <p class="text-[11px] text-amber-400/90 font-medium">Serves 3-4 persons</p>
+                                </div>
+                                <span class="price-tag">₹1080</span>
+                            </div>
+                            <div class="item-row" data-name="Mutton Pot Biryani">
+                                <div>
+                                    <span class="font-semibold text-white">Mutton Pot Biryani</span>
+                                    <p class="text-[11px] text-amber-400/90 font-medium">Traditional Clay Pot Special</p>
+                                </div>
+                                <span class="price-tag">₹1440</span>
+                            </div>
+                            <div class="item-row" data-name="Mutton Jumbo Biryani Feast">
+                                <div>
+                                    <span class="font-semibold text-white">Mutton Jumbo Feast</span>
+                                    <p class="text-[11px] text-amber-400/90 font-medium">Grand Party Pack (Serves 6+)</p>
+                                </div>
+                                <span class="price-tag">₹1800</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. BURGERS & ROLLS -->
+            <section id="burgers-rolls" class="menu-card border-t-4 border-orange-500">
+                <div class="relative overflow-hidden">
+                    <img src="Burgers.jpg" class="section-img" alt="Burgers and Rolls">
+                    <span class="absolute top-3 right-3 bg-orange-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Grab & Eat
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-orange-500/20 pb-2">
+                            <h2 class="text-lg font-black text-orange-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-burger text-orange-500"></i> Burgers & Rolls
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Quick Bites</span>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Star Burger">
+                                <span class="font-semibold text-white">Star Burger</span>
+                                <span class="price-tag">₹70</span>
+                            </div>
+                            <div class="item-row" data-name="Classic Burger">
+                                <span class="font-semibold text-white">Classic Burger</span>
+                                <span class="price-tag">₹99</span>
+                            </div>
+                            <div class="item-row" data-name="Tandoori Burger">
+                                <span class="font-semibold text-white">Tandoori Burger</span>
+                                <span class="price-tag">₹99</span>
+                            </div>
+                            <div class="item-row" data-name="Hot Crispy Burger">
+                                <div>
+                                    <span class="font-semibold text-white">Hot Crispy Burger</span>
+                                    <span class="text-[10px] text-red-400 font-bold ml-1 uppercase">Spicy</span>
+                                </div>
+                                <span class="price-tag">₹110</span>
+                            </div>
+                            <div class="item-row" data-name="Chicken Roll">
+                                <span class="font-semibold text-white">Chicken Roll</span>
+                                <span class="price-tag">₹65</span>
+                            </div>
+                            <div class="item-row" data-name="Tandoori Roll">
+                                <span class="font-semibold text-white">Tandoori Roll</span>
+                                <span class="price-tag">₹85</span>
+                            </div>
+                            <div class="item-row" data-name="Krisper Roll">
+                                <span class="font-semibold text-white">Krisper Roll</span>
+                                <span class="price-tag">₹90</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SNACK ATTACK -->
+            <section id="snacks" class="menu-card border-t-4 border-amber-600">
+                <div class="relative overflow-hidden">
+                    <img src="IMG-20251228-WA0012.jpg" class="section-img" alt="Snack Attack" onerror="this.src='https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-amber-700/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Crunch Time
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-amber-600/20 pb-2">
+                            <h2 class="text-lg font-black text-amber-500 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-french-fries text-amber-600"></i> Snack Attack
+                            </h2>
+                            <div class="text-[10px] text-gray-400 font-bold uppercase flex gap-3">
+                                <span>Reg</span>
+                                <span>Lrg</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Masala Fries">
+                                <span class="font-semibold text-white">Masala Fries</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹50</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹90</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken Fingers">
+                                <span class="font-semibold text-white">Fingers</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹60</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹95</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken Nuggets">
+                                <span class="font-semibold text-white">Nuggets</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹60</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹95</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken 65">
+                                <span class="font-semibold text-white">Chicken 65</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹65</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹95</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken Popcorn">
+                                <span class="font-semibold text-white">Popcorn</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹80</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹130</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken Cheese Shots">
+                                <span class="font-semibold text-white">Chicken Cheese Shots</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹90</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹150</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken Strips">
+                                <span class="font-semibold text-white">Strips</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹99</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹159</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Krusty Bites">
+                                <span class="font-semibold text-white">Krusty Bites</span>
+                                <span class="price-tag">₹120</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Chwings 4 Pcs">
+                                <span class="font-semibold text-white">Peri Peri Chwings (4 Pcs)</span>
+                                <span class="price-tag">₹120</span>
+                            </div>
+                            <div class="item-row" data-name="Chicken Lollipoppers">
+                                <span class="font-semibold text-white">Chicken Lollipoppers</span>
+                                <span class="price-tag">₹120</span>
+                            </div>
+                            <div class="pt-2 text-[11px] text-gray-400 italic">
+                                Add-ons: Mayonnaise / Garlic Mayonnaise / Seasoning
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. SHAWARMAS -->
+            <section id="shawarmas" class="menu-card border-t-4 border-emerald-500">
+                <div class="relative overflow-hidden">
+                    <img src="IMG-20251228-WA0013.jpg" class="section-img" alt="Laziz Shawarmas" onerror="this.src='https://images.unsplash.com/photo-1529006557810-274b9b2fc783?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Laziz Special
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-emerald-500/20 pb-2">
+                            <h2 class="text-lg font-black text-emerald-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-bread-slice text-emerald-500"></i> Laziz Shawarma
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Fresh Pita & Rumali</span>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Special Shawarma">
+                                <span class="font-semibold text-white">Special Shawarma</span>
+                                <span class="price-tag">₹119</span>
+                            </div>
+                            <div class="item-row" data-name="Grill Shawarma">
+                                <span class="font-semibold text-white">Grill Shawarma</span>
+                                <span class="price-tag">₹129</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Shawarma">
+                                <span class="font-semibold text-white">Peri Peri Shawarma</span>
+                                <span class="price-tag">₹139</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Grill Shawarma">
+                                <span class="font-semibold text-white">Peri Peri Grill Shawarma</span>
+                                <span class="price-tag">₹149</span>
+                            </div>
+                            <div class="item-row" data-name="Smokey Shawarma">
+                                <span class="font-semibold text-white">Smokey Shawarma</span>
+                                <span class="price-tag">₹149</span>
+                            </div>
+                            <div class="item-row" data-name="Italian Shawarma">
+                                <span class="font-semibold text-white">Italian Shawarma</span>
+                                <span class="price-tag">₹149</span>
+                            </div>
+                            <div class="item-row" data-name="Chicken Bites Shawarma">
+                                <span class="font-semibold text-white">Chicken Bites Shawarma</span>
+                                <span class="price-tag">₹159</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Smokey Shawarma">
+                                <span class="font-semibold text-white">Peri Peri Smokey Shawarma</span>
+                                <span class="price-tag">₹169</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Chicken Bites Shawarma">
+                                <span class="font-semibold text-white">Peri Peri Chicken Bites Shawarma</span>
+                                <span class="price-tag">₹179</span>
+                            </div>
+                            <div class="item-row" data-name="Cheese Burst Shawarma">
+                                <span class="font-semibold text-white">Cheese Burst Shawarma</span>
+                                <span class="price-tag">₹219</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Cheese Burst Shawarma">
+                                <span class="font-semibold text-white">Peri Peri Cheese Burst Shawarma</span>
+                                <span class="price-tag">₹249</span>
+                            </div>
+                            <div class="item-row" data-name="Own Your Customized Shawarma">
+                                <span class="font-semibold text-amber-300">Own Your Customized Shawarma</span>
+                                <span class="price-tag">₹159</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. KEBABS & PLATTERS -->
+            <section id="kebabs" class="menu-card border-t-4 border-rose-500">
+                <div class="relative overflow-hidden">
+                    <img src="IMG-20251228-WA0015.jpg" class="section-img" alt="Kebabs & Platters" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-rose-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Sizzling
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-rose-500/20 pb-2">
+                            <h2 class="text-lg font-black text-rose-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-utensils text-rose-500"></i> Kebabs & Platters
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Donner & Grill</span>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Donner Kebab Role">
+                                <div>
+                                    <span class="font-semibold text-white">Donner Kebab Roll</span>
+                                    <p class="text-[11px] text-gray-400">Succulent grilled meat rolled to perfection</p>
+                                </div>
+                                <span class="price-tag">₹149</span>
+                            </div>
+                            <div class="item-row" data-name="Donner Kebab Shawarma">
+                                <div>
+                                    <span class="font-semibold text-white">Donner Kebab Shawarma</span>
+                                    <p class="text-[11px] text-gray-400">Fusion of classic donner & shawarma</p>
+                                </div>
+                                <span class="price-tag">₹169</span>
+                            </div>
+                            <div class="item-row" data-name="Donner Kebab Plater">
+                                <div>
+                                    <span class="font-semibold text-white">Donner Kebab Platter</span>
+                                    <p class="text-[11px] text-amber-400/90 font-medium">Served with dips & pita slices</p>
+                                </div>
+                                <span class="price-tag">₹249</span>
+                            </div>
+                            <div class="item-row" data-name="Shawarma Donner Kebab Mixed Plater">
+                                <div>
+                                    <span class="font-semibold text-white">Shawarma Donner Mixed Platter</span>
+                                    <p class="text-[11px] text-amber-400/90 font-medium">Grand mixed meat sharing platter</p>
+                                </div>
+                                <span class="price-tag">₹349</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. BOWLS & SALADS -->
+            <section id="bowls-salads" class="menu-card border-t-4 border-teal-500">
+                <div class="relative overflow-hidden">
+                    <img src="IMG-20251228-WA0016.jpg" class="section-img" alt="Bowls and Salads" onerror="this.src='https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-teal-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Healthy & Loaded
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-teal-500/20 pb-2">
+                            <h2 class="text-lg font-black text-teal-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-bowl-food text-teal-500"></i> Bowls & Salads
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Laziz Specials</span>
+                        </div>
+                        
+                        <h3 class="text-xs font-black uppercase text-amber-400 tracking-wider mb-2">Shawarma Bowls</h3>
+                        <div class="space-y-1 text-sm menu-item-container mb-4">
+                            <div class="item-row" data-name="Shaan Bowl">
+                                <span class="font-semibold text-white">Shaan Bowl</span>
+                                <span class="price-tag">₹219</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Shaan Bowl">
+                                <span class="font-semibold text-white">Peri Peri Shaan Bowl</span>
+                                <span class="price-tag">₹249</span>
+                            </div>
+                            <div class="item-row" data-name="Smokey Bowl">
+                                <span class="font-semibold text-white">Smokey Bowl</span>
+                                <span class="price-tag">₹259</span>
+                            </div>
+                            <div class="item-row" data-name="Chicken Bites Bowl">
+                                <span class="font-semibold text-white">Chicken Bites Bowl</span>
+                                <span class="price-tag">₹269</span>
+                            </div>
+                            <div class="item-row" data-name="Cheese Burst Bowl">
+                                <span class="font-semibold text-white">Cheese Burst Bowl</span>
+                                <span class="price-tag">₹279</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Cheese Burst Bowl">
+                                <span class="font-semibold text-white">Peri Peri Cheese Burst Bowl</span>
+                                <span class="price-tag">₹299</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Smokey Bowl">
+                                <span class="font-semibold text-white">Peri Peri Smokey Bowl</span>
+                                <span class="price-tag">₹299</span>
+                            </div>
+                            <div class="item-row" data-name="Peri Peri Chicken Bites Bowl">
+                                <span class="font-semibold text-white">Peri Peri Chicken Bites Bowl</span>
+                                <span class="price-tag">₹299</span>
+                            </div>
+                        </div>
+
+                        <h3 class="text-xs font-black uppercase text-emerald-400 tracking-wider mb-2 border-t border-white/5 pt-3">Fresh Salads</h3>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Veg Nation Bowl Salad">
+                                <span class="font-semibold text-white">Veg Nation Bowl</span>
+                                <span class="price-tag">₹139</span>
+                            </div>
+                            <div class="item-row" data-name="Paneer Salad Bowl">
+                                <span class="font-semibold text-white">Paneer Salad Bowl</span>
+                                <span class="price-tag">₹159</span>
+                            </div>
+                            <div class="item-row" data-name="Fish Salad Bowl">
+                                <span class="font-semibold text-white">Fish Salad Bowl</span>
+                                <span class="price-tag">₹179</span>
+                            </div>
+                            <div class="item-row" data-name="Chicken Bites Salad Bowl">
+                                <span class="font-semibold text-white">Chicken Bites Salad Bowl</span>
+                                <span class="price-tag">₹179</span>
+                            </div>
+                            <div class="item-row" data-name="Chicken Sausage Bowl Salad">
+                                <span class="font-semibold text-white">Chicken Sausage Bowl</span>
+                                <span class="price-tag">₹179</span>
+                            </div>
+                            <div class="item-row" data-name="Shawarma Salad Bowl">
+                                <span class="font-semibold text-white">Shawarma Salad Bowl</span>
+                                <span class="price-tag">₹199</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. ICE CREAMS (SCOOPS) -->
+            <section id="ice-cream" class="menu-card border-t-4 border-pink-500">
+                <div class="relative overflow-hidden">
+                    <img src="Milkshakes.jpg" class="section-img" alt="Ice Cream Scoops" onerror="this.src='https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=1000&auto=format&fit=crop'">
+                    <span class="absolute top-3 right-3 bg-pink-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Sweet Scoops
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-pink-500/20 pb-2">
+                            <h2 class="text-lg font-black text-pink-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-ice-cream text-pink-500"></i> Ice Cream Scoops
+                            </h2>
+                            <div class="text-[10px] text-gray-400 font-bold uppercase flex gap-4">
+                                <span>Basic</span>
+                                <span>Special</span>
+                            </div>
+                        </div>
+                        <div class="space-y-1 text-sm menu-item-container">
+                            <div class="item-row" data-name="Vanilla Ice Cream Scoop">
+                                <span class="font-semibold text-white">Vanilla</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹59</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹119</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Butterscotch Ice Cream Scoop">
+                                <span class="font-semibold text-white">Butterscotch</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹69</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹129</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chocolat Chocolate Ice Cream Scoop">
+                                <span class="font-semibold text-white">Chocolat</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹69</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹129</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Strawberry Ice Cream Scoop">
+                                <span class="font-semibold text-white">Strawberry</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹59</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹119</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Pista Ice Cream Scoop">
+                                <span class="font-semibold text-white">Pista</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹57</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹117</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Anjeer Almond Ice Cream Scoop">
+                                <span class="font-semibold text-white">Anjeer Almond</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹80</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹140</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Dry Fruit Temptation Ice Cream Scoop">
+                                <span class="font-semibold text-white">Dry Fruit Temptation</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹80</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹140</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Pinachikki Ice Cream Scoop">
+                                <span class="font-semibold text-white">Pinachikki</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹90</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹150</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Fruit Ninja Ice Cream Scoop">
+                                <span class="font-semibold text-white">Fruit Ninja</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹100</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹160</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Roasted Almond Ice Cream Scoop">
+                                <span class="font-semibold text-white">Roasted Almond</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹100</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹160</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Honeymoon Delight Ice Cream Scoop">
+                                <span class="font-semibold text-white">Honeymoon Delight</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹120</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. SPECIAL SUNDAES -->
+            <section id="sundaes" class="menu-card border-t-4 border-purple-500">
+                <div class="relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1000&auto=format&fit=crop" class="section-img" alt="Ice Cream Sundaes">
+                    <span class="absolute top-3 right-3 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
+                        Indulgence
+                    </span>
+                </div>
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4 border-b border-purple-500/20 pb-2">
+                            <h2 class="text-lg font-black text-purple-400 uppercase tracking-wide flex items-center gap-2">
+                                <i class="fas fa-glass-water text-purple-500"></i> Special Sundaes
+                            </h2>
+                            <span class="text-[10px] text-gray-400 uppercase font-semibold">Loaded Delights</span>
+                        </div>
+                        <div class="space-y-3 text-sm menu-item-container">
+                            <div class="item-row flex-col items-start gap-1 pb-3" data-name="Honeymoon Express Sundae Dry fruit Pista Anjeer almond Fruit ninja">
+                                <div class="w-full flex justify-between items-center">
+                                    <span class="font-bold text-white text-base">Honey moon Express</span>
+                                    <span class="price-tag">₹240</span>
+                                </div>
+                                <p class="text-xs text-gray-400">Dry fruit, Pista, Anjeer almond & Fruit ninja loaded with syrups</p>
+                            </div>
+                            <div class="item-row flex-col items-start gap-1 pb-3" data-name="Special 5 Scoops Sundae toppings nuts">
+                                <div class="w-full flex justify-between items-center">
+                                    <span class="font-bold text-white text-base">Special (5 Scoops)</span>
+                                    <span class="price-tag">₹280</span>
+                                </div>
+                                <p class="text-xs text-gray-400">5 Scoops of Special ice creams with premium toppings and extra crunchy nuts</p>
+                            </div>
+                            <div class="item-row flex-col items-start gap-1 pb-3" data-name="Build Your Own Ice Cream SUNDAE 2 Scoops toppings">
+                                <div class="w-full flex justify-between items-center">
+                                    <span class="font-bold text-amber-300 text-base">Build Your Own SUNDAE</span>
+                                    <span class="price-tag">₹199</span>
+                                </div>
+                                <p class="text-xs text-gray-400">Choose 2 scoops of your choice with delicious gourmet toppings & sauces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 10. VALUE COMBO OFFERS (GRAND SPANNING SECTION) -->
+            <section id="combos" class="md:col-span-2 lg:col-span-3 rounded-[2.5rem] p-8 md:p-12 border-2 border-amber-500/40 relative overflow-hidden bg-white/95 backdrop-blur-md shadow-2xl">
+                <!-- Subtle Accent Glow -->
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-amber-400/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-orange-400/20 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="text-center mb-10">
+                        <span class="inline-block px-4 py-1 rounded-full bg-red-100 border border-red-300 text-red-600 font-extrabold text-xs uppercase tracking-widest mb-3 shadow-sm">
+                            <i class="fas fa-fire mr-1"></i> Mega Savings
+                        </span>
+                        <h2 class="text-3xl md:text-5xl font-black italic uppercase gold-gradient-text tracking-tight">
+                            Value Combo Offers
+                        </h2>
+                        <p class="text-gray-600 text-xs md:text-sm mt-2 font-medium">
+                            Carefully crafted feast boxes for you and your squad
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <!-- Combo 1 -->
+                        <div class="combo-card relative flex flex-col justify-between" data-name="Combo 1 5 Pc Bucket Fingers Nuggets Masala Fries Tandoori Chicken Burger Wings Lollipops 250ml Cool Drink">
+                            <div class="absolute -top-3 right-4 bg-amber-500 text-white font-black text-[10px] uppercase px-3 py-0.5 rounded-full shadow">
+                                Ultimate Feast
+                            </div>
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 1</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹700</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    5 Pc Bucket + Fingers/Nuggets + Masala Fries + Tandoori Chicken Burger + Wings/Lollipops + 250ml Cool Drink
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Combo 2 -->
+                        <div class="combo-card flex flex-col justify-between" data-name="Combo 2 5 Pc Bucket Fingers Nuggets Chicken Cheese Shots">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 2</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹500</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    5 Pc Bucket + Fingers/Nuggets + Chicken Cheese Shots
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Combo 3 -->
+                        <div class="combo-card flex flex-col justify-between" data-name="Combo 3 3 Pc Classic Chicken Lollipops Wings Hungry Birds Burger Milkshake Mocktail">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 3</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹500</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    3 Pc Classic Chicken + Lollipops/Wings + Hungry Birds Burger + Milkshake / Mocktail
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Combo 4 -->
+                        <div class="combo-card flex flex-col justify-between" data-name="Combo 4 2 Pc Classic Chicken Chicken Cheese Shots Masala Fries 250ml Cool Drink">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 4</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹300</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    2 Pc Classic Chicken + Chicken Cheese Shots + Masala Fries + 250ml Cool Drink
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Combo 5 -->
+                        <div class="combo-card flex flex-col justify-between" data-name="Combo 5 2 Pc Classic Chicken Fingers Nuggets Lollipops Wings">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 5</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹300</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    2 Pc Classic Chicken + Fingers/Nuggets + Lollipops/Wings
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Combo 6 -->
+                        <div class="combo-card flex flex-col justify-between" data-name="Combo 6 Lollipops Wings Chicken Shots 250ml Cool Drink">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 6</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹250</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    Lollipops/Wings + Chicken Shots + 250ml Cool Drink
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Combo 7 -->
+                        <div class="combo-card flex flex-col justify-between md:col-span-2 lg:col-span-1" data-name="Combo 7 2 Pc Classic Chicken Fingers Nuggets Crispy Chicken Burger">
+                            <div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="text-xl font-black text-gray-900">Combo 7</h3>
+                                    <span class="text-2xl font-black text-amber-600">₹250</span>
+                                </div>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    2 Pc Classic Chicken + Fingers/Nuggets + Crispy Chicken Burger
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black/50 backdrop-blur-md py-12 text-center text-xs text-gray-300 border-t border-amber-500/30">
+        <div class="max-w-md mx-auto px-4 flex flex-col items-center">
+            <img src="logo.jpg" alt="Golden Wings Logo" class="w-16 h-16 rounded-full border-2 border-amber-400 mb-3 shadow-lg bg-black">
+            <p class="text-amber-400 font-extrabold uppercase tracking-[0.2em] text-sm" style="text-shadow: 0 1px 3px #000;">Golden Wings</p>
+            <p class="text-gray-300 italic text-xs mt-1" style="text-shadow: 0 1px 2px #000;">Crispy Charm in Every Bite</p>
+            <div class="h-[1px] w-24 bg-white/20 my-4"></div>
+            <p class="text-[10px] tracking-widest uppercase text-gray-400">
+                Official Menu &copy; 2026 Golden Wings • All Rights Reserved
+            </p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Smooth scroll handling for nav items with offset
+        document.querySelectorAll('.cat-item').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId && targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const navHeight = document.querySelector('.category-nav').offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 15;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+                        // Update active state
+                        document.querySelectorAll('.cat-item').forEach(el => el.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
