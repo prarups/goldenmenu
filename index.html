@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +32,17 @@
         }
     </script>
     <style>
+        * {
+            -webkit-tap-highlight-color: transparent !important;
+            -webkit-touch-callout: none;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: auto;
+            -webkit-text-size-adjust: 100%;
+        }
+
         body { 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             background-color: #0c0a09; 
@@ -40,19 +51,29 @@
             padding: 0;
             min-height: 100vh;
             position: relative;
+            overflow-x: hidden;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* Fixed Background Wallpaper with hardware acceleration and zero touch interference */
         .bg-fixed-layer {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('bg.jpg');
             background-size: cover;
             background-position: center top;
             background-repeat: no-repeat;
             z-index: -2;
+            pointer-events: none;
+            transform: translateZ(0);
+            -webkit-transform: translateZ(0);
         }
         
         .gold-gradient-text {
@@ -62,16 +83,15 @@
             filter: drop-shadow(0 2px 5px rgba(0,0,0,0.9));
         }
 
+        /* STICKY CATEGORY NAV - Clean solid dark glass, zero black glitch on mobile */
         .category-nav {
             position: sticky; 
             top: 0; 
             z-index: 100;
-            background: rgba(10, 8, 7, 0.6); 
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
-            border-bottom: 1.5px solid rgba(245, 158, 11, 0.4);
+            background: rgba(14, 11, 10, 0.96); 
+            border-bottom: 1.5px solid rgba(245, 158, 11, 0.45);
             padding: 8px 4px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.7);
         }
 
         .nav-container {
@@ -100,17 +120,15 @@
             justify-content: center;
             padding: 8px 2px;
             border-radius: 12px;
-            background: rgba(0, 0, 0, 0.45);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(26, 22, 20, 0.90);
+            border: 1px solid rgba(255, 255, 255, 0.16);
             color: #ffffff;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
-            transition: all 0.2s ease;
             text-align: center;
             text-decoration: none;
             position: relative;
             text-shadow: 0 1px 3px #000000;
+            touch-action: manipulation;
         }
 
         @media (min-width: 768px) {
@@ -150,20 +168,30 @@
             }
         }
 
-        .cat-item:hover, .cat-item:active {
-            background: rgba(245, 158, 11, 0.4);
-            border-color: #f59e0b;
-            color: #ffffff;
-            transform: scale(0.97);
+        /* Desktop only hover */
+        @media (hover: hover) and (pointer: fine) {
+            .cat-item:hover {
+                background: rgba(245, 158, 11, 0.45);
+                border-color: #f59e0b;
+                color: #ffffff;
+            }
+            .menu-card:hover {
+                border-color: rgba(245, 158, 11, 0.75);
+                box-shadow: 0 16px 36px rgba(0, 0, 0, 0.8), 0 0 16px rgba(245, 158, 11, 0.25);
+            }
+            .combo-card:hover {
+                border-color: rgba(245, 158, 11, 0.9) !important;
+                background: rgba(35, 28, 25, 0.90) !important;
+            }
         }
 
-        /* COMBO BUTTON SPECIAL HIGHLIGHT (ESPECIALLY ON MOBILE) */
+        /* COMBO BUTTON SPECIAL HIGHLIGHT (Glowing without jittery layout shifts) */
         .combo-highlight {
             background: linear-gradient(135deg, #ef4444 0%, #ea580c 50%, #f59e0b 100%) !important;
             border: 2px solid #fef08a !important;
             color: #ffffff !important;
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.8), 0 2px 8px rgba(0, 0, 0, 0.6) !important;
-            animation: comboPulse 2s infinite ease-in-out;
+            box-shadow: 0 0 12px rgba(239, 68, 68, 0.7), 0 2px 8px rgba(0, 0, 0, 0.6) !important;
+            animation: comboGlow 2s infinite ease-in-out;
         }
 
         .combo-highlight i {
@@ -177,18 +205,12 @@
             text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
-        @keyframes comboPulse {
-            0% {
-                transform: scale(1);
+        @keyframes comboGlow {
+            0%, 100% {
                 box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
             }
             50% {
-                transform: scale(1.06);
-                box-shadow: 0 0 20px rgba(245, 158, 11, 0.85), 0 0 25px rgba(239, 68, 68, 0.65);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+                box-shadow: 0 0 18px rgba(245, 158, 11, 0.9), 0 0 14px rgba(239, 68, 68, 0.8);
             }
         }
 
@@ -197,30 +219,20 @@
         }
 
         @keyframes pulseHint {
-            0% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(1.2); }
-            100% { opacity: 1; transform: scale(1); }
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.15); }
         }
 
-        /* 80% TRANSPARENT CARDS (NO SOLID BLACK) - FULL BACKGROUND IMAGE VISIBILITY */
+        /* CLEAN HIGH-PERFORMANCE MENU CARDS (NO HEAVY BLUR - 0% BLACK FLICKER) */
         .menu-card {
-            background: rgba(0, 0, 0, 0.20) !important;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border-radius: 22px;
+            background: rgba(16, 13, 11, 0.82) !important;
+            border-radius: 20px;
             border: 1.5px solid rgba(245, 158, 11, 0.45);
-            box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.65), inset 0 0 15px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-        }
-
-        .menu-card:hover {
-            border-color: rgba(245, 158, 11, 0.8);
-            box-shadow: 0 20px 45px -5px rgba(0, 0, 0, 0.8), 0 0 20px rgba(245, 158, 11, 0.3);
-            background: rgba(0, 0, 0, 0.28) !important;
-            transform: translateY(-3px);
+            scroll-margin-top: 130px;
         }
 
         .section-img {
@@ -230,126 +242,111 @@
             border-bottom: 2px solid rgba(245, 158, 11, 0.35);
         }
 
-        /* 80% TRANSPARENT ITEM ROWS WITH CRISP SHARP TEXT */
+        /* MENU ITEM ROWS - PURE READABILITY, NO CLICK EVENTS, NO DARKENING ON TOUCH */
         .item-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 14px;
-            margin-bottom: 7px;
-            background: rgba(0, 0, 0, 0.28);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 12px;
-            transition: all 0.15s ease;
+            padding: 9px 12px;
+            margin-bottom: 6px;
+            background: rgba(28, 23, 20, 0.70);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 10px;
+            pointer-events: auto;
         }
 
         .item-row:last-child {
             margin-bottom: 0;
         }
 
-        .item-row:hover {
-            background-color: rgba(245, 158, 11, 0.25);
-            border-color: rgba(245, 158, 11, 0.6);
-            transform: translateX(2px);
-        }
-
         .item-row span, .item-row .text-white {
             color: #ffffff !important;
             font-weight: 700;
-            text-shadow: 0 1px 4px #000000, 0 0 2px #000000;
+            text-shadow: 0 1px 3px #000000;
         }
 
         .item-row p, .item-row .text-gray-400 {
             color: #e2e8f0 !important;
-            text-shadow: 0 1px 3px #000000;
+            text-shadow: 0 1px 2px #000000;
         }
 
         .item-row .text-amber-400\/90, .item-row .text-amber-300 {
             color: #fde047 !important;
-            text-shadow: 0 1px 3px #000000;
+            text-shadow: 0 1px 2px #000000;
         }
 
         .item-row .text-gray-300 {
             color: #f1f5f9 !important;
-            text-shadow: 0 1px 3px #000000;
+            text-shadow: 0 1px 2px #000000;
         }
 
         /* SOLID CONTRAST GOLDEN PRICE BADGE */
         .price-tag {
-            background: rgba(245, 158, 11, 0.3) !important;
+            background: rgba(245, 158, 11, 0.25) !important;
             border: 1.5px solid #fbbf24 !important;
-            padding: 3px 11px;
+            padding: 3px 10px;
             border-radius: 9999px;
             color: #fbbf24 !important;
             font-weight: 900;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             white-space: nowrap;
             letter-spacing: 0.02em;
-            text-shadow: 0 1px 4px #000000;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+            text-shadow: 0 1px 3px #000000;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
         }
 
         .dual-price-pill {
-            background: rgba(245, 158, 11, 0.3) !important;
+            background: rgba(245, 158, 11, 0.25) !important;
             border: 1.5px solid #fbbf24 !important;
-            padding: 3px 10px;
+            padding: 3px 9px;
             border-radius: 8px;
             font-size: 11px;
             font-weight: 900;
             color: #fbbf24 !important;
             text-shadow: 0 1px 3px #000000;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .combo-card {
-            background: rgba(0, 0, 0, 0.28) !important;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
+            background: rgba(28, 23, 20, 0.75) !important;
             border: 1.5px dashed rgba(245, 158, 11, 0.5) !important;
-            border-radius: 16px;
-            padding: 18px;
-            transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-        }
-
-        .combo-card:hover {
-            border-color: rgba(245, 158, 11, 0.9) !important;
-            transform: translateY(-3px);
-            background: rgba(0, 0, 0, 0.4) !important;
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
         }
 
         .combo-card h3 {
             color: #ffffff !important;
-            text-shadow: 0 1px 4px #000000;
+            text-shadow: 0 1px 3px #000000;
         }
 
         .combo-card p {
             color: #f1f5f9 !important;
-            text-shadow: 0 1px 3px #000000;
+            text-shadow: 0 1px 2px #000000;
         }
 
         #combos {
-            background: rgba(0, 0, 0, 0.25) !important;
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+            background: rgba(16, 13, 11, 0.85) !important;
             border: 2px solid rgba(245, 158, 11, 0.5) !important;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7) !important;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6) !important;
+            scroll-margin-top: 130px;
         }
 
         #combos p {
             color: #e2e8f0 !important;
-            text-shadow: 0 1px 3px #000000;
+            text-shadow: 0 1px 2px #000000;
         }
 
         /* Custom scrollbar for category menu */
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        /* Disable expensive GPU backdrop-filter on mobile to guarantee 60-120fps smooth scrolling with 0% black screen glitches */
+        @media (max-width: 1024px) {
+            [class*="backdrop-blur"] {
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+            }
         }
     </style>
 </head>
