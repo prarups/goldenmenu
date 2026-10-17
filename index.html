@@ -66,7 +66,7 @@
             bottom: 0;
             width: 100%;
             height: 100%;
-            background-image: url('bg.jpg');
+            background-image: url('bg.webp');
             background-size: cover;
             background-position: center top;
             background-repeat: no-repeat;
@@ -233,6 +233,8 @@
             display: flex;
             flex-direction: column;
             scroll-margin-top: 130px;
+            content-visibility: auto;
+            contain-intrinsic-size: 350px 480px;
         }
 
         .section-img {
@@ -357,9 +359,10 @@
 
     <!-- Top Official Banner Section (Full Screen Width, Sleek Reduced Height) -->
     <header class="w-full overflow-hidden border-b border-amber-500/50 bg-[#0c0a09] shadow-2xl">
-        <img src="banner.png" 
+        <img src="banner.webp" 
              alt="Laziz Shawarma & Golden Wings Official Menu Banner" 
-             class="w-full h-44 sm:h-56 md:h-72 lg:h-80 xl:h-[350px] object-cover object-[center_30%] block shadow-2xl">
+             class="w-full h-44 sm:h-56 md:h-72 lg:h-80 xl:h-[350px] object-cover object-[center_30%] block shadow-2xl"
+             fetchpriority="high">
     </header>
 
     <!-- Tap Hint -->
@@ -432,7 +435,7 @@
             <!-- 1. FRIED CHICKEN (CLASSIC & ROASTED) -->
             <section id="fried-chicken" class="menu-card border-t-4 border-amber-500">
                 <div class="relative overflow-hidden">
-                    <img src="Classic & Roasted.png" class="section-img" alt="Crispy Fried Chicken" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Classic & Roasted.webp" class="section-img" alt="Crispy Fried Chicken" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1562967914-608f82629710?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-red-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Chef's Special
                     </span>
@@ -476,7 +479,7 @@
                             </div>
                             <div class="item-row" data-name="Add-on Mayonnaise Seasoning">
                                 <span class="text-gray-300 italic text-xs">Add-on Mayonnaise / Seasoning</span>
-                                <span class="price-tag text-xs">₹10</span>
+                                <span class="price-tag text-xs">₹20</span>
                             </div>
                         </div>
                     </div>
@@ -486,7 +489,7 @@
             <!-- 2. BIRYANI SPECIAL -->
             <section id="biryani" class="menu-card border-t-4 border-yellow-500">
                 <div class="relative overflow-hidden">
-                    <img src="Biryani Special.png" class="section-img" alt="Biryani Special" onerror="this.src='https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Biryani Special.webp" class="section-img" alt="Biryani Special" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-amber-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Royal Feast
                     </span>
@@ -571,7 +574,7 @@
             <!-- 3. BURGERS & ROLLS -->
             <section id="burgers-rolls" class="menu-card border-t-4 border-orange-500">
                 <div class="relative overflow-hidden">
-                    <img src="Burgers & Rolls.png" class="section-img" alt="Burgers and Rolls">
+                    <img src="Burgers & Rolls.webp" class="section-img" alt="Burgers and Rolls" loading="lazy" decoding="async">
                     <span class="absolute top-3 right-3 bg-orange-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Grab & Eat
                     </span>
@@ -624,7 +627,7 @@
             <!-- 4. SNACK ATTACK -->
             <section id="snacks" class="menu-card border-t-4 border-amber-600">
                 <div class="relative overflow-hidden">
-                    <img src="Snack Attack.png" class="section-img" alt="Snack Attack" onerror="this.src='https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Snack Attack.webp" class="section-img" alt="Snack Attack" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-amber-700/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Crunch Time
                     </span>
@@ -720,7 +723,7 @@
             <!-- 5. SHAWARMAS -->
             <section id="shawarmas" class="menu-card border-t-4 border-emerald-500">
                 <div class="relative overflow-hidden">
-                    <img src="Laziz Shawarma.png" class="section-img" alt="Laziz Shawarmas" onerror="this.src='https://images.unsplash.com/photo-1529006557810-274b9b2fc783?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Laziz Shawarma.webp" class="section-img" alt="Laziz Shawarmas" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1529006557810-274b9b2fc783?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Laziz Special
                     </span>
@@ -790,7 +793,7 @@
             <!-- 6. KEBABS & PLATTERS -->
             <section id="kebabs" class="menu-card border-t-4 border-rose-500">
                 <div class="relative overflow-hidden">
-                    <img src="Kebabs & Platters.png" class="section-img" alt="Kebabs & Platters" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Kebabs & Platters.webp" class="section-img" alt="Kebabs & Platters" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-rose-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Sizzling
                     </span>
@@ -840,7 +843,7 @@
             <!-- 7. BOWLS & SALADS -->
             <section id="bowls-salads" class="menu-card border-t-4 border-teal-500">
                 <div class="relative overflow-hidden">
-                    <img src="Bowls & Salads.png" class="section-img" alt="Bowls and Salads" onerror="this.src='https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Bowls & Salads.webp" class="section-img" alt="Bowls and Salads" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-teal-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Healthy & Loaded
                     </span>
@@ -924,7 +927,7 @@
             <!-- 8. REFRESHING MOJITOS -->
             <section id="mojitos" class="menu-card border-t-4 border-cyan-500">
                 <div class="relative overflow-hidden">
-                    <img src="Mojitos.jpg" class="section-img" alt="Refreshing Mojitos" onerror="this.src='https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Mojitos.webp" class="section-img" alt="Refreshing Mojitos" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-cyan-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Chilled &amp; Fizzy
                     </span>
@@ -974,7 +977,7 @@
             <!-- 9. BUBBLE TEA SPECIAL -->
             <section id="bubble-tea" class="menu-card border-t-4 border-violet-500">
                 <div class="relative overflow-hidden">
-                    <img src="BubbleTea.png" class="section-img" alt="Gourmet Bubble Tea" onerror="this.src='https://images.unsplash.com/photo-1558857563-b37cf5a9477e?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="BubbleTea.webp" class="section-img" alt="Gourmet Bubble Tea" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1558857563-b37cf5a9477e?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-violet-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Popping Boba
                     </span>
@@ -1063,10 +1066,10 @@
                 </div>
             </section>
 
-            <!-- 8. ICE CREAMS (SCOOPS) -->
+            <!-- 10. ICE CREAMS (SCOOPS) -->
             <section id="ice-cream" class="menu-card border-t-4 border-pink-500">
                 <div class="relative overflow-hidden">
-                    <img src="Ice Cream Scoops.png" class="section-img" alt="Ice Cream Scoops" onerror="this.src='https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=1000&auto=format&fit=crop'">
+                    <img src="Ice Cream Scoops.webp" class="section-img" alt="Ice Cream Scoops" loading="lazy" decoding="async" onerror="this.src='https://images.unsplash.com/photo-1501443762994-82bd5dace89a?q=80&w=1000&auto=format&fit=crop'">
                     <span class="absolute top-3 right-3 bg-pink-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Sweet Scoops
                     </span>
@@ -1176,10 +1179,10 @@
                 </div>
             </section>
 
-            <!-- 9. SPECIAL SUNDAES -->
+            <!-- 11. SPECIAL SUNDAES -->
             <section id="sundaes" class="menu-card border-t-4 border-purple-500">
                 <div class="relative overflow-hidden">
-                    <img src="Special Sundaes.png" class="section-img" alt="Ice Cream Sundaes">
+                    <img src="Special Sundaes.webp" class="section-img" alt="Ice Cream Sundaes" loading="lazy" decoding="async">
                     <span class="absolute top-3 right-3 bg-purple-600/90 backdrop-blur-md text-white text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-full tracking-wider border border-white/20">
                         Indulgence
                     </span>
