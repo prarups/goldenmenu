@@ -350,6 +350,33 @@
                 -webkit-backdrop-filter: none !important;
             }
         }
+
+        /* Professional Print Styles for Menu Card PDF */
+        @media print {
+            .category-nav,
+            .tap-hint-bar {
+                display: none !important;
+            }
+            body {
+                background-color: #0c0a09 !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .bg-fixed-layer {
+                display: block !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+            .menu-card, #combos {
+                break-inside: avoid !important;
+                page-break-inside: avoid !important;
+                margin-bottom: 20px !important;
+            }
+            @page {
+                size: A4 portrait;
+                margin: 8mm;
+            }
+        }
     </style>
 </head>
 <body>
@@ -366,7 +393,7 @@
     </header>
 
     <!-- Tap Hint -->
-    <div class="bg-black/35 border-b border-amber-500/20 py-1.5 text-center backdrop-blur-sm">
+    <div class="tap-hint-bar bg-black/35 border-b border-amber-500/20 py-1.5 text-center backdrop-blur-sm">
         <span class="text-[10px] md:text-xs text-amber-400 font-extrabold uppercase tracking-widest flex items-center justify-center gap-1.5" style="text-shadow: 0 1px 3px #000;">
             <i class="fas fa-hand-pointer text-amber-400 pulse-icon"></i> Tap any category to jump
         </span>
@@ -707,7 +734,7 @@
                                 <div class="flex items-center gap-2">
                                     <span class="price-tag text-xs">₹50</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-orange-400">₹90</span>
+                                    <span class="price-tag text-xs text-orange-400">₹100</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Chicken Fingers">
@@ -753,9 +780,31 @@
                             <div class="item-row" data-name="Chicken Strips">
                                 <span class="font-semibold text-white">Strips</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹99</span>
+                                    <span class="price-tag text-xs">₹150</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-orange-400">₹159</span>
+                                    <span class="price-tag text-xs text-orange-400">₹220</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Veg Fried Momos 4 Pcs 6 Pcs">
+                                <div>
+                                    <span class="font-semibold text-white">Veg Fried Momos</span>
+                                    <p class="text-[11px] text-gray-400">Reg (4 Pcs) / Lrg (6 Pcs)</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹70</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹100</span>
+                                </div>
+                            </div>
+                            <div class="item-row" data-name="Chicken Fried Momos 4 Pcs 6 Pcs">
+                                <div>
+                                    <span class="font-semibold text-white">Chicken Fried Momos</span>
+                                    <p class="text-[11px] text-gray-400">Reg (4 Pcs) / Lrg (6 Pcs)</p>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹85</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹120</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Krusty Bites">
@@ -768,7 +817,11 @@
                             </div>
                             <div class="item-row" data-name="Chicken Lollipoppers">
                                 <span class="font-semibold text-white">Chicken Lollipoppers</span>
-                                <span class="price-tag">₹120</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="price-tag text-xs">₹150</span>
+                                    <span class="text-gray-500">/</span>
+                                    <span class="price-tag text-xs text-orange-400">₹220</span>
+                                </div>
                             </div>
                             <div class="pt-2 text-[11px] text-gray-400 italic">
                                 Add-ons: Mayonnaise / Garlic Mayonnaise / Seasoning
@@ -1139,73 +1192,65 @@
                                 <i class="fas fa-ice-cream text-pink-500"></i> Ice Cream Scoops
                             </h2>
                             <div class="flex items-center gap-2">
-                                <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-yellow-400/20 text-yellow-300 border border-yellow-400/80 shadow-[0_0_10px_rgba(250,204,21,0.35)]">Basic</span>
-                                <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-pink-500/25 text-pink-300 border border-pink-400/80 shadow-[0_0_10px_rgba(244,114,182,0.4)]">Special</span>
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-yellow-400/20 text-yellow-300 border border-yellow-400/80 shadow-[0_0_10px_rgba(250,204,21,0.35)]">Single ₹100</span>
+                                <span class="px-2.5 py-0.5 rounded-full text-xs font-black uppercase tracking-wider bg-pink-500/25 text-pink-300 border border-pink-400/80 shadow-[0_0_10px_rgba(244,114,182,0.4)]">Double ₹180</span>
                             </div>
                         </div>
                         <div class="space-y-1 text-sm menu-item-container">
-                            <div class="item-row" data-name="Vanilla Ice Cream Scoop">
-                                <span class="font-semibold text-white">Vanilla</span>
-                                <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹59</span>
-                                    <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹119</span>
-                                </div>
-                            </div>
                             <div class="item-row" data-name="Butterscotch Ice Cream Scoop">
                                 <span class="font-semibold text-white">Butterscotch</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹69</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹129</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Chocolat Chocolate Ice Cream Scoop">
                                 <span class="font-semibold text-white">Chocolat</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹69</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹129</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Strawberry Ice Cream Scoop">
                                 <span class="font-semibold text-white">Strawberry</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹59</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹119</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Pista Ice Cream Scoop">
                                 <span class="font-semibold text-white">Pista</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹57</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹117</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Anjeer Almond Ice Cream Scoop">
                                 <span class="font-semibold text-white">Anjeer Almond</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹80</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹140</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Dry Fruit Temptation Ice Cream Scoop">
                                 <span class="font-semibold text-white">Dry Fruit Temptation</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹80</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹140</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Pinachikki Ice Cream Scoop">
                                 <span class="font-semibold text-white">Pinachikki</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹90</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹150</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Fruit Ninja Ice Cream Scoop">
@@ -1213,7 +1258,7 @@
                                 <div class="flex items-center gap-2">
                                     <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹160</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Roasted Almond Ice Cream Scoop">
@@ -1221,16 +1266,22 @@
                                 <div class="flex items-center gap-2">
                                     <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
-                                    <span class="price-tag text-xs text-pink-400">₹160</span>
+                                    <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
                             </div>
                             <div class="item-row" data-name="Honeymoon Delight Ice Cream Scoop">
                                 <span class="font-semibold text-white">Honeymoon Delight</span>
                                 <div class="flex items-center gap-2">
-                                    <span class="price-tag text-xs">₹120</span>
+                                    <span class="price-tag text-xs">₹100</span>
                                     <span class="text-gray-500">/</span>
                                     <span class="price-tag text-xs text-pink-400">₹180</span>
                                 </div>
+                            </div>
+                            <div class="item-row mt-2.5 pt-2 border-t border-pink-500/20" data-name="Ice Cream Toppings">
+                                <span class="text-pink-300 font-semibold text-xs flex items-center gap-1.5">
+                                    <i class="fas fa-cookie text-pink-400 text-[11px]"></i> (Any 2 ice cream Toppings)
+                                </span>
+                                <span class="price-tag text-xs text-pink-400">₹30</span>
                             </div>
                         </div>
                     </div>

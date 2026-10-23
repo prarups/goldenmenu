@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Laziz Shawarma & Golden Wings — Official 1-Page Menu Card</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: #0a0806;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 7.6px;
+            line-height: 1.18;
+        }
+        .page {
+            width: 210mm;
+            height: 297mm;
+            max-height: 297mm;
+            box-sizing: border-box;
+            padding: 4.5mm 5.5mm 3.5mm 5.5mm;
+            overflow: hidden;
+            position: relative;
+            background-image: linear-gradient(rgba(10, 8, 6, 0.72), rgba(10, 8, 6, 0.78)), url('bg.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .header-box {
+            background: linear-gradient(135deg, rgba(20, 16, 12, 0.94), rgba(30, 22, 14, 0.94));
+            border: 1.5px solid rgba(245, 158, 11, 0.55);
+            border-radius: 8px;
+            padding: 4px 8px;
+            margin-bottom: 3.5px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card-box {
+            background: rgba(18, 14, 11, 0.88);
+            border: 1px solid rgba(245, 158, 11, 0.32);
+            border-radius: 5px;
+            padding: 3px 5px;
+            margin-bottom: 3px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            display: flex;
+            flex-direction: column;
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(245, 158, 11, 0.3);
+            padding-bottom: 1.5px;
+            margin-bottom: 2px;
+        }
+        .card-title {
+            font-size: 8.6px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        .item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1px 0;
+            border-bottom: 1px dashed rgba(255,255,255,0.06);
+        }
+        .item-row:last-child {
+            border-bottom: none;
+        }
+        .item-name {
+            font-weight: 600;
+            color: #f3f4f6;
+            font-size: 7.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .price-badge {
+            font-weight: 800;
+            color: #fbbf24;
+            font-size: 7.6px;
+            white-space: nowrap;
+            margin-left: 3px;
+        }
+        .tag-pill {
+            font-size: 6.2px;
+            font-weight: 800;
+            padding: 0.5px 3.5px;
+            border-radius: 3px;
+            text-transform: uppercase;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- Official Top Header with BOTH LOGOS -->
+        <div class="header-box">
+            <!-- Left: Golden Wings Logo -->
+            <div class="flex items-center gap-2">
+                <img src="logo.jpg" alt="Golden Wings Logo" class="w-11 h-11 rounded-full border-2 border-amber-400 shadow-md object-cover bg-black">
+                <div class="text-left leading-tight hidden sm:block">
+                    <span class="text-[7.5px] font-black uppercase text-amber-400 tracking-wider block">Golden Wings</span>
+                    <span class="text-[6px] text-amber-200/80">Thai Crispy Chicken</span>
+                </div>
+            </div>
+
+            <!-- Center: Brand Name & Slogan -->
+            <div class="text-center px-2 flex-1">
+                <h1 class="text-[13px] font-black uppercase tracking-wider text-amber-400 flex items-center justify-center gap-1.5 drop-shadow" style="text-shadow: 0 1px 3px #000;">
+                    Laziz Shawarma &amp; Golden Wings
+                </h1>
+                <p class="text-[7px] text-amber-100 font-semibold tracking-wide">
+                    Authentic Taste &amp; Crispy Charm in Every Bite • 100% Halal
+                </p>
+                <div class="flex items-center justify-center gap-2 mt-0.5">
+                    <span class="bg-amber-500/25 text-amber-300 border border-amber-400/50 px-2 py-0.2 rounded-full text-[6.5px] font-black uppercase tracking-widest">
+                        Official Dine-in &amp; Takeaway Menu
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right: Laziz Shawarma Logo -->
+            <div class="flex items-center gap-2 text-right justify-end">
+                <div class="text-right leading-tight hidden sm:block">
+                    <span class="text-[7.5px] font-black uppercase text-amber-400 tracking-wider block">Laziz Shawarma</span>
+                    <span class="text-[6px] text-amber-200/80">Authentic Rumali &amp; Pita</span>
+                </div>
+                <img src="logo_laziz.png" alt="Laziz Shawarma Logo" class="w-11 h-11 rounded-full border-2 border-amber-400 shadow-md object-cover bg-black">
+            </div>
+        </div>
+
+        <!-- 4 Columns Grid Filling Full Page Height -->
+        <div class="grid grid-cols-4 gap-1.5 flex-1">
+
+            <!-- COLUMN 1: Classic & Roasted, Biryani Special, Burgers & Rolls, Pizza Corner -->
+            <div class="flex flex-col justify-between">
+                <!-- 1. CLASSIC & ROASTED -->
+                <div class="card-box border-amber-500/35">
+                    <div class="card-header border-amber-500/30">
+                        <span class="card-title text-amber-400"><i class="fas fa-drumstick-bite text-amber-500"></i> Classic &amp; Roasted</span>
+                        <span class="tag-pill bg-red-950/80 text-red-300 border border-red-500/40">Thai Spiced</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Classic Chicken (1 Pc)</span><span class="price-badge">₹80</span></div>
+                    <div class="item-row"><span class="item-name">Classic Chicken (5 Pcs)</span><span class="price-badge">₹390</span></div>
+                    <div class="item-row"><span class="item-name">Classic Chicken (10 Pcs)</span><span class="price-badge">₹770</span></div>
+                    <div class="item-row"><span class="item-name">Spice Roaster (Half)</span><span class="price-badge">₹229</span></div>
+                    <div class="item-row bg-amber-500/10 px-0.5 rounded"><span class="item-name text-amber-200 italic text-[6.8px]">Add-on Mayo / Seasoning</span><span class="price-badge text-[6.8px]">₹20</span></div>
+                </div>
+
+                <!-- 2. BIRYANI SPECIAL -->
+                <div class="card-box border-yellow-500/35">
+                    <div class="card-header border-yellow-500/30">
+                        <span class="card-title text-yellow-400"><i class="fas fa-bowl-rice text-yellow-500"></i> Biryani Special</span>
+                        <span class="tag-pill bg-yellow-950/80 text-yellow-300 border border-yellow-500/40">Dum Special</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Chicken Biryani (Single)</span><span class="price-badge">₹220</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Family Pack (3-4)</span><span class="price-badge">₹660</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Jumbo Feast (6+)</span><span class="price-badge">₹1100</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Fry Biryani (Family)</span><span class="price-badge">₹900</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Fry Biryani (Jumbo)</span><span class="price-badge">₹1500</span></div>
+                    <div class="item-row"><span class="item-name">Mutton Biryani (Regular)</span><span class="price-badge">₹360</span></div>
+                    <div class="item-row"><span class="item-name">Mutton Family Pack (3-4)</span><span class="price-badge">₹1080</span></div>
+                    <div class="item-row"><span class="item-name">Mutton Pot Biryani (Clay Pot)</span><span class="price-badge">₹1440</span></div>
+                    <div class="item-row"><span class="item-name">Mutton Jumbo Feast (6+)</span><span class="price-badge">₹1800</span></div>
+                </div>
+
+                <!-- 3. BURGERS & ROLLS -->
+                <div class="card-box border-orange-500/35">
+                    <div class="card-header border-orange-500/30">
+                        <span class="card-title text-orange-400"><i class="fas fa-burger text-orange-500"></i> Burgers &amp; Rolls</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Star Burger</span><span class="price-badge">₹70</span></div>
+                    <div class="item-row"><span class="item-name">Classic Burger</span><span class="price-badge">₹99</span></div>
+                    <div class="item-row"><span class="item-name">Tandoori Burger</span><span class="price-badge">₹99</span></div>
+                    <div class="item-row"><span class="item-name">Hot Crispy Burger</span><span class="price-badge">₹110</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Roll</span><span class="price-badge">₹65</span></div>
+                    <div class="item-row"><span class="item-name">Tandoori Roll</span><span class="price-badge">₹85</span></div>
+                    <div class="item-row"><span class="item-name">Krisper Roll</span><span class="price-badge">₹90</span></div>
+                </div>
+
+                <!-- 4. PIZZA CORNER -->
+                <div class="card-box border-red-500/35">
+                    <div class="card-header border-red-500/30">
+                        <span class="card-title text-red-400"><i class="fas fa-pizza-slice text-red-500"></i> Pizza Corner</span>
+                        <span class="tag-pill bg-red-950/80 text-red-300">Oven Fresh</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Veg Pizza</span><span class="price-badge">₹250</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Pizza</span><span class="price-badge">₹330</span></div>
+                    <div class="item-row"><span class="item-name">Paneer Pizza</span><span class="price-badge">₹300</span></div>
+                    <div class="item-row"><span class="item-name">Margherita Pizza</span><span class="price-badge">₹150 / ₹180</span></div>
+                </div>
+            </div>
+
+            <!-- COLUMN 2: Snack Attack, Laziz Shawarma, Kebabs & Platters -->
+            <div class="flex flex-col justify-between">
+                <!-- 5. SNACK ATTACK (with Veg Momos & Chicken Momos) -->
+                <div class="card-box border-amber-600/35">
+                    <div class="card-header border-amber-600/30">
+                        <span class="card-title text-amber-500"><i class="fas fa-cookie-bite text-amber-600"></i> Snack Attack</span>
+                        <span class="tag-pill bg-amber-500/20 text-amber-300">Reg / Lrg</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Masala Fries</span><span class="price-badge">₹50 / ₹100</span></div>
+                    <div class="item-row"><span class="item-name">Fingers</span><span class="price-badge">₹60 / ₹95</span></div>
+                    <div class="item-row"><span class="item-name">Nuggets</span><span class="price-badge">₹60 / ₹95</span></div>
+                    <div class="item-row"><span class="item-name">Chicken 65</span><span class="price-badge">₹65 / ₹95</span></div>
+                    <div class="item-row"><span class="item-name">Popcorn</span><span class="price-badge">₹80 / ₹130</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Cheese Shots</span><span class="price-badge">₹90 / ₹150</span></div>
+                    <div class="item-row"><span class="item-name">Strips</span><span class="price-badge">₹150 / ₹220</span></div>
+                    <div class="item-row bg-amber-500/20 px-0.5 rounded border border-amber-500/40">
+                        <span class="item-name text-amber-200 font-bold">Veg Fried Momos (4/6 Pc)</span>
+                        <span class="price-badge text-amber-300">₹70 / ₹100</span>
+                    </div>
+                    <div class="item-row bg-amber-500/20 px-0.5 rounded border border-amber-500/40">
+                        <span class="item-name text-amber-200 font-bold">Chicken Fried Momos</span>
+                        <span class="price-badge text-amber-300">₹85 / ₹120</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Krusty Bites</span><span class="price-badge">₹120</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Chwings (4 Pc)</span><span class="price-badge">₹120</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Lollipoppers</span><span class="price-badge">₹150 / ₹220</span></div>
+                </div>
+
+                <!-- 6. LAZIZ SHAWARMA -->
+                <div class="card-box border-emerald-500/35">
+                    <div class="card-header border-emerald-500/30">
+                        <span class="card-title text-emerald-400"><i class="fas fa-bread-slice text-emerald-500"></i> Laziz Shawarma</span>
+                        <span class="tag-pill bg-emerald-950/80 text-emerald-300">Rumali/Pita</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Special Shawarma</span><span class="price-badge">₹119</span></div>
+                    <div class="item-row"><span class="item-name">Grill Shawarma</span><span class="price-badge">₹129</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Shawarma</span><span class="price-badge">₹139</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Grill Shawarma</span><span class="price-badge">₹149</span></div>
+                    <div class="item-row"><span class="item-name">Smokey Shawarma</span><span class="price-badge">₹149</span></div>
+                    <div class="item-row"><span class="item-name">Italian Shawarma</span><span class="price-badge">₹149</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Bites Shawarma</span><span class="price-badge">₹159</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Smokey Shawarma</span><span class="price-badge">₹169</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Chicken Bites</span><span class="price-badge">₹179</span></div>
+                    <div class="item-row"><span class="item-name">Cheese Burst Shawarma</span><span class="price-badge">₹219</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Cheese Burst</span><span class="price-badge">₹249</span></div>
+                    <div class="item-row bg-emerald-500/10 px-0.5 rounded"><span class="item-name text-emerald-200">Customized Shawarma</span><span class="price-badge">₹159</span></div>
+                </div>
+
+                <!-- 7. KEBABS & PLATTERS -->
+                <div class="card-box border-rose-500/35">
+                    <div class="card-header border-rose-500/30">
+                        <span class="card-title text-rose-400"><i class="fas fa-utensils text-rose-500"></i> Kebabs &amp; Platters</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Donner Kebab Roll</span><span class="price-badge">₹149</span></div>
+                    <div class="item-row"><span class="item-name">Donner Kebab Shawarma</span><span class="price-badge">₹169</span></div>
+                    <div class="item-row"><span class="item-name">Donner Kebab Platter</span><span class="price-badge">₹249</span></div>
+                    <div class="item-row"><span class="item-name">Shawarma Donner Platter</span><span class="price-badge">₹349</span></div>
+                </div>
+            </div>
+
+            <!-- COLUMN 3: Bowls & Salads, Mojitos, Bubble Tea -->
+            <div class="flex flex-col justify-between">
+                <!-- 8. BOWLS & SALADS -->
+                <div class="card-box border-teal-500/35">
+                    <div class="card-header border-teal-500/30">
+                        <span class="card-title text-teal-400"><i class="fas fa-bowl-food text-teal-500"></i> Bowls &amp; Salads</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Shaan Bowl</span><span class="price-badge">₹219</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Shaan Bowl</span><span class="price-badge">₹249</span></div>
+                    <div class="item-row"><span class="item-name">Smokey Bowl</span><span class="price-badge">₹259</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Bites Bowl</span><span class="price-badge">₹269</span></div>
+                    <div class="item-row"><span class="item-name">Cheese Burst Bowl</span><span class="price-badge">₹279</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Cheese Burst</span><span class="price-badge">₹299</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Smokey Bowl</span><span class="price-badge">₹299</span></div>
+                    <div class="item-row"><span class="item-name">Peri Peri Chicken Bites</span><span class="price-badge">₹299</span></div>
+                    <div class="item-row"><span class="item-name">Veg Nation Bowl</span><span class="price-badge">₹139</span></div>
+                    <div class="item-row"><span class="item-name">Paneer Salad Bowl</span><span class="price-badge">₹159</span></div>
+                    <div class="item-row"><span class="item-name">Fish Salad Bowl</span><span class="price-badge">₹179</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Bites Salad</span><span class="price-badge">₹179</span></div>
+                    <div class="item-row"><span class="item-name">Chicken Sausage Bowl</span><span class="price-badge">₹179</span></div>
+                    <div class="item-row"><span class="item-name">Shawarma Salad Bowl</span><span class="price-badge">₹199</span></div>
+                </div>
+
+                <!-- 9. MOJITO SPECIAL -->
+                <div class="card-box border-cyan-500/35">
+                    <div class="card-header border-cyan-500/30">
+                        <span class="card-title text-cyan-400"><i class="fas fa-glass-martini-alt text-cyan-500"></i> Mojito Special</span>
+                        <span class="tag-pill bg-cyan-950/80 text-cyan-300">Ice Cold</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Blueberry Mojito</span><span class="price-badge">₹140</span></div>
+                    <div class="item-row"><span class="item-name">Mojito Special</span><span class="price-badge">₹140</span></div>
+                    <div class="item-row"><span class="item-name">Bubblegum Mojito</span><span class="price-badge">₹140</span></div>
+                    <div class="item-row"><span class="item-name">Raspberry Mojito</span><span class="price-badge">₹140</span></div>
+                </div>
+
+                <!-- 10. BUBBLE TEA -->
+                <div class="card-box border-violet-500/35">
+                    <div class="card-header border-violet-500/30">
+                        <span class="card-title text-violet-400"><i class="fas fa-mug-hot text-violet-500"></i> Bubble Tea Special</span>
+                        <span class="tag-pill bg-violet-950/80 text-violet-300">All ₹160</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">1. Watermelon Pop</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">2. Mandarin Orange</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">3. Singapore Pineapple</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">4. Pink Indulgence</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">5. Chocolate Blast</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">6. Tiramisu Coffee</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">7. Sundowner Mango</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">8. French Vanilla</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">9. Coconut Glacier</span><span class="price-badge">₹160</span></div>
+                    <div class="item-row"><span class="item-name">10. Cool Kick Paan</span><span class="price-badge">₹160</span></div>
+                </div>
+            </div>
+
+            <!-- COLUMN 4: Ice Cream Scoops, Sundaes, Combos -->
+            <div class="flex flex-col justify-between">
+                <!-- 11. ICE CREAMS (SCOOPS) -->
+                <div class="card-box border-pink-500/35">
+                    <div class="card-header border-pink-500/30">
+                        <span class="card-title text-pink-400"><i class="fas fa-ice-cream text-pink-500"></i> Ice Cream Scoops</span>
+                        <span class="tag-pill bg-pink-500/25 text-pink-300 border border-pink-400/50">Sgl ₹100 / Dbl ₹180</span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-x-1.5 gap-y-0.5">
+                        <div class="item-row"><span class="item-name">Butterscotch</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Chocolat</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Strawberry</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Pista</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Anjeer Almond</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Dry Fruit Tempt</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Pinachikki</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Fruit Ninja</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Roasted Almond</span><span class="price-badge">100/180</span></div>
+                        <div class="item-row"><span class="item-name">Honeymoon Dlt</span><span class="price-badge">100/180</span></div>
+                    </div>
+                    <div class="item-row bg-pink-500/20 px-1 py-0.5 rounded border border-pink-500/40 mt-1">
+                        <span class="item-name text-pink-200 font-bold flex items-center gap-1">
+                            <i class="fas fa-cookie text-pink-400"></i> Any 2 Ice Cream Toppings
+                        </span>
+                        <span class="price-badge text-pink-300 font-extrabold">₹30</span>
+                    </div>
+                </div>
+
+                <!-- 12. SPECIAL SUNDAES -->
+                <div class="card-box border-purple-500/35">
+                    <div class="card-header border-purple-500/30">
+                        <span class="card-title text-purple-400"><i class="fas fa-glass-water text-purple-500"></i> Special Sundaes</span>
+                    </div>
+                    <div class="item-row"><span class="item-name">Honey moon Express</span><span class="price-badge">₹240</span></div>
+                    <div class="item-row"><span class="item-name">Special (5 Scoops Loaded)</span><span class="price-badge">₹280</span></div>
+                    <div class="item-row"><span class="item-name">Build Your Own SUNDAE</span><span class="price-badge">₹199</span></div>
+                </div>
+
+                <!-- 13. VALUE COMBO OFFERS -->
+                <div class="card-box border-amber-500/45 bg-gradient-to-b from-stone-900/90 via-amber-950/40 to-stone-950/90 flex-1">
+                    <div class="card-header border-amber-500/40">
+                        <span class="card-title text-amber-300"><i class="fas fa-fire text-amber-500"></i> Value Combos</span>
+                        <span class="tag-pill bg-amber-500 text-black font-black">Mega Saver</span>
+                    </div>
+                    <div class="space-y-0.5 flex-1 flex flex-col justify-between">
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 1</span><span class="font-black text-amber-400 text-[7.8px]">₹700</span></div>
+                            <div class="text-[5.8px] text-gray-300">5 Pc Bucket + Fries + Burger + Wings + 250ml Drink</div>
+                        </div>
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 2</span><span class="font-black text-amber-400 text-[7.8px]">₹500</span></div>
+                            <div class="text-[5.8px] text-gray-300">5 Pc Bucket + Fingers/Nuggets + Cheese Shots</div>
+                        </div>
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 3</span><span class="font-black text-amber-400 text-[7.8px]">₹500</span></div>
+                            <div class="text-[5.8px] text-gray-300">3 Pc Chicken + Wings + Burger + Shake/Mocktail</div>
+                        </div>
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 4</span><span class="font-black text-amber-400 text-[7.8px]">₹300</span></div>
+                            <div class="text-[5.8px] text-gray-300">2 Pc Chicken + Cheese Shots + Fries + 250ml Drink</div>
+                        </div>
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 5</span><span class="font-black text-amber-400 text-[7.8px]">₹300</span></div>
+                            <div class="text-[5.8px] text-gray-300">2 Pc Chicken + Fingers/Nuggets + Wings</div>
+                        </div>
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 6</span><span class="font-black text-amber-400 text-[7.8px]">₹250</span></div>
+                            <div class="text-[5.8px] text-gray-300">Lollipops/Wings + Shots + 250ml Cool Drink</div>
+                        </div>
+                        <div class="bg-black/60 p-0.5 rounded border border-amber-500/20">
+                            <div class="flex justify-between items-center"><span class="font-bold text-amber-200 text-[7px]">COMBO 7</span><span class="font-black text-amber-400 text-[7.8px]">₹250</span></div>
+                            <div class="text-[5.8px] text-gray-300">2 Pc Chicken + Fingers/Nuggets + Crispy Burger</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer Bar with High Contrast -->
+        <div class="mt-1 pt-1 border-t border-amber-500/40 flex justify-between items-center text-[7px] text-amber-200/90 font-semibold">
+            <span>Official Menu Card • All-in-One Single Page</span>
+            <span class="text-amber-400 font-extrabold uppercase tracking-widest">Laziz Shawarma &amp; Golden Wings • Authentic Taste in Every Bite</span>
+            <span>All Prices Inclusive of Taxes</span>
+        </div>
+    </div>
+
+</body>
+</html>
