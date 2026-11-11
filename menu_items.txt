@@ -19,19 +19,21 @@ CATEGORY: Classic & Roasted
 -------------------------------------------------------
 CATEGORY: Biryani Special
 -------------------------------------------------------
-* Chicken Biryani (Single) : ₹220
+* Chicken Biryani (Single) : ₹250
+* (ADD) Chicken Sada : ₹120
+* (ADD) Mutton Sada : ₹180
   - Details: Aromatic basmati dum biryani with succulent chicken
-* Chicken Family Pack : ₹660
+* Chicken Family Pack : ₹899
   - Details: Serves 3-4 persons
-* Chicken Jumbo Feast : ₹1100
+* Chicken Jumbo Feast : ₹1400
   - Details: Grand Party Pack (Serves 6+)
-* Chicken Fry Biryani (Family Pack) : ₹900
+* Chicken Fry Biryani (Family Pack) : ₹1199
   - Details: With crispy spiced chicken fry (Serves 3-4)
-* Chicken Fry Biryani (Jumbo) : ₹1500
+* Chicken Fry Biryani (Jumbo) : ₹1899
   - Details: Loaded with crispy chicken fry (Serves 6+)
-* Mutton Biryani (Regular) : ₹360
+* Mutton Biryani (Regular) : ₹380
   - Details: Tender mutton slow-cooked with aromatic basmati
-* Mutton Family Pack : ₹1080
+* Mutton Family Pack : ₹1280
   - Details: Serves 3-4 persons
 * Mutton Pot Biryani : ₹1440
   - Details: Traditional Clay Pot Special
@@ -41,13 +43,19 @@ CATEGORY: Biryani Special
 -------------------------------------------------------
 CATEGORY: Burgers & Rolls
 -------------------------------------------------------
-* Star Burger : ₹70
-* Classic Burger : ₹99
-* Tandoori Burger : ₹99
-* Hot Crispy Burger : ₹110
-* Chicken Roll : ₹65
-* Tandoori Roll : ₹85
-* Krisper Roll : ₹90
+* Star Burger : ₹80
+* Classic Burger : ₹100
+* Tandoori Burger : ₹110
+* Hot & Crispy Burger : ₹120 (Mostly liked in the menu)
+* Chicken Roll : ₹85
+* Tandoori Roll : ₹95
+* Krisper Roll : ₹110
+
+[VEG ROLL & BURGERS]
+* Veg Burger : ₹90
+* Paneer Burger : ₹120
+* Veg Roll : ₹80
+* Paneer Roll : ₹110
 
 -------------------------------------------------------
 CATEGORY: Pizza Corner
@@ -161,19 +169,19 @@ CATEGORY: Bubble Tea
 
 -------------------------------------------------------
 CATEGORY: Ice Cream Scoops
-Pricing: Single scoop ₹100 / Double scoop ₹180
+Pricing: Single scoop ₹130 / Double scoop ₹200
 Add-on: (Any 2 ice cream Toppings ₹30)
 -------------------------------------------------------
-* Butterscotch : ₹100 / ₹180
-* Chocolat : ₹100 / ₹180
-* Strawberry : ₹100 / ₹180
-* Pista : ₹100 / ₹180
-* Anjeer Almond : ₹100 / ₹180
-* Dry Fruit Temptation : ₹100 / ₹180
-* Pinachikki : ₹100 / ₹180
-* Fruit Ninja : ₹100 / ₹180
-* Roasted Almond : ₹100 / ₹180
-* Honeymoon Delight : ₹100 / ₹180
+* Butterscotch : ₹130 / ₹200
+* Chocolat : ₹130 / ₹200
+* Strawberry : ₹130 / ₹200
+* Pista : ₹130 / ₹200
+* Anjeer Almond : ₹130 / ₹200
+* Dry Fruit Temptation : ₹130 / ₹200
+* Pinachikki : ₹130 / ₹200
+* Fruit Ninja : ₹130 / ₹200
+* Roasted Almond : ₹130 / ₹200
+* Honeymoon Delight : ₹130 / ₹200
 * Any 2 Ice Cream Toppings : ₹30
 
 -------------------------------------------------------
