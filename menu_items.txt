@@ -6,14 +6,12 @@
 -------------------------------------------------------
 CATEGORY: Classic & Roasted
 -------------------------------------------------------
-* Classic Chicken (1 Pc) : ₹80
+* Classic Chicken (1 Pc) : ₹90
   - Details: Thai Crispy / Crunchy Masala
-* Classic Chicken (5 Pcs) : ₹390
+* Classic Chicken (5 Pcs) : ₹399
   - Details: Thai Crispy / Crunchy Masala
-* Classic Chicken (10 Pcs) : ₹770
+* Classic Chicken (10 Pcs) : ₹799
   - Details: Mega Bucket Saver
-* Spice Roaster (Half) : ₹229
-  - Details: Juicy Roasted Seasoned Chicken
 * Add-on Mayonnaise / Seasoning : ₹20
 
 -------------------------------------------------------
@@ -75,14 +73,14 @@ CATEGORY: Snack Attack
 * Masala Fries : ₹50 / ₹100
 * Fingers : ₹60 / ₹95
 * Nuggets : ₹60 / ₹95
-* Chicken 65 : ₹65 / ₹95
+* Chicken 65 : ₹120
 * Popcorn : ₹80 / ₹130
 * Chicken Cheese Shots : ₹90 / ₹150
-* Strips : ₹150 / ₹220
+* Strips (3 Pcs) : ₹150 / ₹220
 * Veg Fried Momos (4 Pcs / 6 Pcs) : ₹70 / ₹100
 * Chicken Fried Momos (4 Pcs / 6 Pcs) : ₹85 / ₹120
 * Krusty Bites : ₹120
-* Peri Peri Chwings (4 Pcs) : ₹120
+* Wings : ₹150 / ₹200
 * Chicken Lollipoppers : ₹150 / ₹220
 
 -------------------------------------------------------
